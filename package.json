@@ -1,0 +1,28 @@
+{
+  "name": "react_highcharts_sampler",
+  "version": "0.1.0",
+  "description": "React + Highcharts",
+  "dependencies": {
+    "highcharts": "^8.1.2",
+    "highcharts-react-official": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.1",
+    "eslint": "^7.4.0",
+    "eslint-plugin-react": "^7.20.3"
+  },
+  "scripts": {
+    "start": "npm run build",
+    "build": "mkdir -p ./public & npm run build-js & npm run copy-html",
+    "build-js": "browserify ./index.js -t babelify > ./public/app.js",
+    "copy-html": "cp ./*.html ./public/"
+  },
+  "private": true
+}
